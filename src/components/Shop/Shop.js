@@ -46,8 +46,11 @@ const handleAddToCart =(selectedProduct)=>{
         <div className='shop-container'>
             <div className='products-container'>
                 {
-                    products.map(product => 
-                        console.log("tayesh is vudai"))
+                    products.map(product => <Product
+                        key={product.id} 
+                        product={product}
+                        handleAddToCart={handleAddToCart}
+                        ></Product>)
                     }
             </div>
             <div className="cart-container">

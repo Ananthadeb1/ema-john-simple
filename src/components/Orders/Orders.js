@@ -19,9 +19,9 @@ const Orders = () => {
         <div className='shop-container'>
             <div className="review-item-container">
                 {
-                    cart.map(Product => <ReviewItem
-                    key={Product.id}
-                    Product = {Product}
+                    cart.map(product => <ReviewItem
+                    key={product.id}
+                    product = {product}
                     hendleRemoveProduct ={hendleRemoveProduct}
                     ></ReviewItem>)
                 }

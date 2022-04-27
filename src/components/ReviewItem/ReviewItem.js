@@ -5,7 +5,7 @@ import './ReviewItem.css'
 
 const ReviewItem = (props) => {
     const {product, hendleRemoveProduct} =props ;
-    const {name,img, price, shipping, quantity} = product;
+    const {name, img, price, shipping, quantity} = product;
     return (
         <div className="review-item">
             <div>
