@@ -7,8 +7,8 @@ import Product from '../Product/Product'
 import './Shop.css'
 
 const Shop = () => {
-    const [products,setproducts] = useProducts();
-    const[cart,setcart]= useState([]);
+    const [products,setProducts] = useProducts();
+    const[cart,setCart]= useState([]);
    
 useEffect(()=>{
    const storedCart = getStoredCart();
@@ -21,12 +21,12 @@ useEffect(()=>{
     savedCart.push(addedProduct);
     }
 }
-setcart(savedCart);
+setCart(savedCart);
 },[products]);
 
 
 const handleAddToCart =(selectedProduct)=>{
-    console.log(selectedProduct)
+    console.log(selectedProduct);
     let newCart = [];
     const exists = cart.find(product => product.id === selectedProduct.id);
     if(!exists){
@@ -38,7 +38,7 @@ const handleAddToCart =(selectedProduct)=>{
         exists.quantity = exists.quantity + 1;
         newCart = [...rest, exists]
     }
-    setcart(newCart)
+    setCart(newCart)
     addToDb(selectedProduct.id);
 }
 
@@ -46,11 +46,9 @@ const handleAddToCart =(selectedProduct)=>{
         <div className='shop-container'>
             <div className='products-container'>
                 {
-                    products.map(product=> <Product
-                        key={product.id} 
-                        product={product}
-                        handleAddToCart={handleAddToCart}></Product>)
-                }
+                    products.map(product => 
+                        console.log("tayesh is vudai"))
+                    }
             </div>
             <div className="cart-container">
                     <Cart cart={cart}>
