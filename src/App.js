@@ -5,6 +5,8 @@ import Header from './components/Header/Header';
 import Inventory from './components/Inventory/Inventory';
 import Login from './components/Login/Login';
 import Orders from './components/Orders/Orders';
+import RequireAuth from './components/RequireAurh/RequireAuth';
+import Shipment from './components/Shipment/Shipment';
 import Shop from './components/Shop/Shop';
 import SignUp from './components/SignUp/SignUp';
 
@@ -16,8 +18,16 @@ function App() {
         <Route path='/' element={<Shop></Shop>}></Route>
         <Route path='Shop' element={<Shop></Shop>}></Route>
         <Route path='/Orders' element={<Orders></Orders>}></Route>
-        <Route path='/Inventory' element={<Inventory></Inventory>}></Route>
-        <Route path='/About' element={<About></About>}></Route>
+        <Route path='/Inventory' element={
+          <RequireAuth>
+            <Inventory></Inventory>
+          </RequireAuth>
+        }></Route>
+        <Route path='/shipment' element={
+        <RequireAuth>
+          <Shipment></Shipment>
+        </RequireAuth>}></Route>
+        <Route path='/about' element={<About></About>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
       </Routes>
