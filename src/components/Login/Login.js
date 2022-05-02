@@ -37,27 +37,28 @@ const Login =() =>{
     }
     return(
         <div className='form-container'>
+            <div>
+                <h2 className='form-title'>login</h2>
                <form onSubmit={handelUserSignIn}>
-               <h2 className='form-title'>login</h2>
-            <div className="input-group">
-                <label htmlFor="email">Email</label>
-                <input onBlur={handleEmailBlur} type="email" name='email'  required/>
-            </div>
-            <div className="input-group">
-                <label htmlFor="password">Password</label>
-                <input onBlur={handlePasswordBlur} type="password" name='password'  required/>
-            </div>
-            <p style={{color: 'red'}}>{error?.message}</p>
-            {
-                loading && <p>Loading...</p>
-            }
-            <input className='from-submit' type="submit" value="Login" />
-               </form>
-               <p>
-                   New to ema-John? <Link className='form-link' to='/signup'>Create an account</Link>
+                    <div className="input-group">
+                        <label htmlFor="email">Email</label>
+                        <input onBlur={handleEmailBlur} type="email" name='email'  required/>
+                    </div>
+                    <div className="input-group">
+                        <label htmlFor="password">Password</label>
+                        <input onBlur={handlePasswordBlur} type="password" name='password'  required/>
+                    </div>
+                        <p style={{color: 'red'}}>{error?.message}</p>
+                        {
+                            loading && <p>Loading...</p>
+                        }
+                        <input className='from-submit' type="submit" value="Login" />
+                </form>
+                    <p>
+                        New to ema-John? <Link className='form-link' to='/signup'>Create an account</Link>
                    </p>
+            </div>
         </div>
-
     );
 };
 

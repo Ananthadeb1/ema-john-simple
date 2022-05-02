@@ -42,8 +42,9 @@ const SignUp = () => {
     }
     return (
         <div className='form-container'>
+            <div>
+            <h2 className='form-title'>Sign up</h2>
                <form onSubmit={handleCreateUser}>
-               <h2 className='form-title'>Sign up</h2>
             <div className="input-group">
                 <label htmlFor="email">Email</label>
                 <input onBlur={handleEmailBlur} type="email" name='email'  required/>
@@ -62,6 +63,7 @@ const SignUp = () => {
                <p>
                    Already have an account? <Link className='form-link' to='/login'>Login</Link>
                    </p>
+            </div>
         </div>
     );
 };
